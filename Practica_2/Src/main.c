@@ -63,10 +63,14 @@ void 	delayInit(delay_t * delay, tick_t duration);
 bool_t 	delayRead(delay_t * delay);
 void 	delayWrite(delay_t * delay, tick_t duration);
 
+
+//This function starts the structure. It receives as parameter the name of the structure and the initial delay.
 void delayInit(delay_t * delay, tick_t duration ){
 	delay->duration = duration;
 }
 
+/*This function constantly validates if the indicated delay has elapsed.
+It receives the name of the structure as its only parameter.*/
 bool_t delayRead(delay_t * delay){
 	if(delay->running){
 		if(HAL_GetTick() >= (delay->startTime + delay->duration)){
@@ -84,6 +88,7 @@ bool_t delayRead(delay_t * delay){
 	}
 }
 
+//Receives the name of the structure and the new delay as parameters.
 void delayWrite(delay_t * delay, tick_t duration){
 	delay->duration = duration;
 }

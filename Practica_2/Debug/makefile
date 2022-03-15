@@ -64,8 +64,8 @@ all: main-build
 main-build: Practica_2.elf secondary-outputs
 
 # Tool invocations
-Practica_2.elf: $(OBJS) $(USER_OBJS) /home/javelasco/Documentos/Progrmación\ de\ Microprocesadores/examples/Practica_2/STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Practica_2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/javelasco/Documentos/Progrmación de Microprocesadores/examples/Practica_2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Practica_2.elf: $(OBJS) $(USER_OBJS) /home/javelasco/Documentos/Programacion\ de\ Microprocesadores/Codigos/Practicas/Practica_2/STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Practica_2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/javelasco/Documentos/Programacion de Microprocesadores/Codigos/Practicas/Practica_2/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

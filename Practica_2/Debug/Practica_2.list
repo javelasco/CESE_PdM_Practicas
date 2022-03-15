@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  00024e1d  00000000  00000000  00028148  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0000754b  00000000  00000000  0004cf65  2**0
+ 18 .debug_line   000076ce  00000000  00000000  0004cf65  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000e1555  00000000  00000000  000544b0  2**0
+ 19 .debug_str    000e155e  00000000  00000000  00054633  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000053  00000000  00000000  00135a05  2**0
+ 20 .comment      00000053  00000000  00000000  00135b91  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00001184  00000000  00000000  00135a58  2**2
+ 21 .debug_frame  00001184  00000000  00000000  00135be4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -3414,11 +3414,11 @@ __weak uint32_t HAL_RCC_GetSysClockFreq(void)
  8001674:	007a1200 	.word	0x007a1200
 
 08001678 <delayInit>:
-
-void 	delayInit(delay_t * delay, tick_t duration);
 bool_t 	delayRead(delay_t * delay);
 void 	delayWrite(delay_t * delay, tick_t duration);
 
+
+//This function starts the structure. It receives as parameter the name of the structure and the initial delay.
 void delayInit(delay_t * delay, tick_t duration ){
  8001678:	b480      	push	{r7}
  800167a:	b083      	sub	sp, #12
@@ -3438,6 +3438,8 @@ void delayInit(delay_t * delay, tick_t duration ){
 
 08001694 <delayRead>:
 
+/*This function constantly validates if the indicated delay has elapsed.
+It receives the name of the structure as its only parameter.*/
 bool_t delayRead(delay_t * delay){
  8001694:	b580      	push	{r7, lr}
  8001696:	b082      	sub	sp, #8
