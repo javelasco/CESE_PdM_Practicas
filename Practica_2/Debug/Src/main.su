@@ -1,6 +1,6 @@
-main.c:68:6:delayInit	16	static
-main.c:74:8:delayRead	16	static
-main.c:92:6:delayWrite	16	static
-main.c:97:5:main	8	static
-main.c:174:13:SystemClock_Config	88	static
-main.c:226:13:Error_Handler	8	static
+main.c:67:6:delayInit	16	static
+main.c:73:8:delayRead	16	static
+main.c:91:6:delayWrite	16	static
+main.c:100:5:main	8	static
+main.c:177:13:SystemClock_Config	88	static
+main.c:229:13:Error_Handler	8	static

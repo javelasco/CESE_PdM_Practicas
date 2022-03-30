@@ -1,0 +1,15 @@
+#ifndef __API_DEBOUNCE_H
+#define __API_DEBOUNCE_H
+
+#include "main.h"
+#include <stdbool.h>
+#include <stdio.h>
+
+typedef uint32_t myDelay = 100;
+
+void debounceFSM_init(Led_TypeDef Led);			// Load initial state
+void debounceFSM_update(bool buttonState);		// Read inputs, solve the state transition logic and update outputs.
+void buttonPressed(void);						// Togglear LED1
+void buttonReleased(void);						// Togglear LED3
+
+#endif

@@ -1,0 +1,17 @@
+23:24:46 **** Incremental Build of configuration Debug for project Practica_4.2 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/javelasco/Documentos/Programacion de Microprocesadores/Codigos/Practicas/Practica_4.2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/javelasco/Documentos/Programacion de Microprocesadores/Codigos/Practicas/Practica_4.2/Drivers/CMSIS/Include" -I"/home/javelasco/Documentos/Programacion de Microprocesadores/Codigos/Practicas/Practica_4.2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/javelasco/Documentos/Programacion de Microprocesadores/Codigos/Practicas/Practica_4.2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/javelasco/Documentos/Programacion de Microprocesadores/Codigos/Practicas/Practica_4.2/Drivers/Core/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
+../Drivers/API/src/API_debounce.c:22:8: warning: return type defaults to 'int' [-Wimplicit-int]
+   22 | static debounceFSM_init(Led_TypeDef Led){
+      |        ^~~~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:22:8: warning: conflicting types for 'debounceFSM_init'
+../Drivers/API/src/API_debounce.c:22:8: error: static declaration of 'debounceFSM_init' follows non-static declaration
+In file included from ../Drivers/API/src/API_debounce.c:3:
+../Inc/../Drivers/API/inc/API_debounce.h:9:6: note: previous declaration of 'debounceFSM_init' was here
+    9 | void debounceFSM_init(Led_TypeDef Led);   // Recibe el Led a oscilar e inicializa la función antirebote del FSM
+      |      ^~~~~~~~~~~~~~~~
+../Drivers/API/src/API_debounce.c:22:8: warning: 'debounceFSM_init' defined but not used [-Wunused-function]
+   22 | static debounceFSM_init(Led_TypeDef Led){
+      |        ^~~~~~~~~~~~~~~~
+make: *** [Drivers/API/src/subdir.mk:22: Drivers/API/src/API_debounce.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.

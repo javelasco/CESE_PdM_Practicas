@@ -16,3 +16,9 @@ Implementar funciones para el uso de retardos no bloqueantes, hacer oscilar los 
 
 Practica 3:
 Implementar el API para el uso de retardos no bloqueantes, hacer uso de la práctica 1.
+
+Practica 4.1:
+Implementar una FSM para un antirrebote por software.
+
+Practica 4.2:
+Implementar un API de antirrebote usando FSM y implementar un programar que togglee un LED a diferentes frecuencias de acuerdo si el pulsador está presionado o no.

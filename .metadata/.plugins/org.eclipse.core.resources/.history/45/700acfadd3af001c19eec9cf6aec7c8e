@@ -1,0 +1,13 @@
+#ifndef __API_DEBOUNCE_H
+#define __API_DEBOUNCE_H
+
+#include "main.h"
+#include <stdbool.h>
+#include <stdio.h>
+
+void debounceFSM_init(Led_TypeDef Led, uint32_t firtsTogle, uint32_t secondToggle);			// Load initial state
+void debounceFSM_update(bool buttonState);		// Read inputs, solve the state transition logic and update outputs.
+void buttonPressed(void);						// Togglear LED1
+void buttonReleased(void);						// Togglear LED3
+
+#endif

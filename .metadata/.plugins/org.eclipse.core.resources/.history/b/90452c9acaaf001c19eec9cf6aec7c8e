@@ -1,0 +1,70 @@
+
+#include "main.h"
+#include "../Drivers/API/inc/API_debounce.h"
+#include "../Drivers/API/inc/API_delay.h"
+
+debounceState_t state;
+
+
+void debounceFSM_init(){
+	state = BUTTON_UP;
+}
+
+void buttonPressed(){
+	BSP_LED_Toggle(LED1);
+}
+
+void buttonReleased(){
+	BSP_LED_Toggle(LED3);
+}
+
+void debounceFSM_update(bool buttonState){
+	if(buttonState){							// Was the button pushed?
+		switch(state){
+			case BUTTON_UP:
+				state = BUTTON_FALLING;
+				break;
+
+			case BUTTON_FALLING:
+				state = BUTTON_DOWN;
+				buttonPressed();
+				break;
+
+			case BUTTON_DOWN:
+				break;
+
+			case BUTTON_RAISING:
+				break;
+
+			default:
+				state = BUTTON_UP;
+				BSP_LED_Off(LED1);
+				BSP_LED_Off(LED3);
+		}
+	}
+	if(!buttonState){ 							// Was the button released?
+		switch(state){
+			case BUTTON_UP:
+				break;
+
+			case BUTTON_FALLING:
+				break;
+
+			case BUTTON_DOWN:
+				state = BUTTON_RAISING;
+				break;
+
+			case BUTTON_RAISING:
+				state = BUTTON_UP;
+				buttonReleased();
+				break;
+
+			default:
+				state = BUTTON_UP;
+				BSP_LED_Off(LED1);
+				BSP_LED_Off(LED3);
+		}
+	}
+}
+
+

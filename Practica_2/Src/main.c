@@ -63,7 +63,6 @@ void 	delayInit(delay_t * delay, tick_t duration);
 bool_t 	delayRead(delay_t * delay);
 void 	delayWrite(delay_t * delay, tick_t duration);
 
-
 //This function starts the structure. It receives as parameter the name of the structure and the initial delay.
 void delayInit(delay_t * delay, tick_t duration ){
 	delay->duration = duration;
@@ -92,6 +91,10 @@ bool_t delayRead(delay_t * delay){
 void delayWrite(delay_t * delay, tick_t duration){
 	delay->duration = duration;
 }
+
+const uint32_t msLed1 = 100;
+const uint32_t msLed2 = 500;
+const uint32_t msLed3 = 1000;
 
 
 int main(void)
@@ -127,9 +130,9 @@ int main(void)
   BSP_LED_Off(LED3);
 
   // Initialize the three structs.
-  delayInit(&delayLed1, 100);	//delay 100ms
-  delayInit(&delayLed2, 500);	//delay 500ms
-  delayInit(&delayLed3, 1000);	//delay 1000ms
+  delayInit(&delayLed1, msLed1);	//delay 100ms
+  delayInit(&delayLed2, msLed2);	//delay 500ms
+  delayInit(&delayLed3, msLed3);	//delay 1000ms
 
   /* Infinite loop */
   while (1)
