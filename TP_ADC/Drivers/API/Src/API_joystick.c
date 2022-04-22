@@ -43,7 +43,7 @@ MyJoystick	myJoystick;
 #define	y_axis	1
 
 #define	adc_number	2
-uint32_t adc_value[adc_number];
+static uint32_t adc_value[adc_number];
 
 ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
