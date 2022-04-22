@@ -1,0 +1,9 @@
+API_joystick.c:55:6:myJoystick_init	16	static
+API_joystick.c:69:9:myJoystick_status	8	static
+API_joystick.c:96:6:myJoystick_rightAxis	4	static
+API_joystick.c:108:6:myJoystick_leftAxis	4	static
+API_joystick.c:120:6:myJoystick_upAxis	4	static
+API_joystick.c:132:6:myJoystick_downAxis	4	static
+API_joystick.c:144:6:myJostick_pushButtonAxis	8	static
+API_joystick.c:204:13:MX_ADC1_Init	24	static
+API_joystick.c:262:13:MX_DMA_Init	16	static

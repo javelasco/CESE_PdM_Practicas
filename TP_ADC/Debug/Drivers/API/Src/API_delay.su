@@ -1,0 +1,3 @@
+API_delay.c:11:6:delayInit	16	static
+API_delay.c:20:8:delayRead	16	static
+API_delay.c:38:6:delayWrite	16	static
